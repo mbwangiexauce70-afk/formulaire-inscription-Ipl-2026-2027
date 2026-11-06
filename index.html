@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Institut Pédagogique de Lemba - Inscription 2026-2027</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="header">
+  <div class="logo"><div class="logo-icon">IPL</div><div><span>Institut Pédagogique de Lemba</span><small>Inscription 2026-2027 - Lemba / Kinshasa</small></div></div>
+  <div class="badge">Inscriptions Ouvertes</div>
+</header>
+<main class="container">
+  <div class="hero"><h1>Inscription <span>IPL Lemba</span></h1><p>Enseignement de Base 7e/8e • Électronique • Coupe et Couture • Pédagogie Générale</p></div>
+  <form id="formIPL" class="card">
+    <div class="step"><span>1</span> Élève</div>
+    <div class="grid2">
+      <div class="field"><label>Nom *</label><input type="text" id="nom" required placeholder="Ex: Mbwangi"></div>
+      <div class="field"><label>Post-nom & Prénom *</label><input type="text" id="postnom" required></div>
+    </div>
+    <div class="grid2">
+      <div class="field"><label>Date de naissance *</label><input type="date" id="naissance" required></div>
+      <div class="field"><label>Sexe *</label><select id="sexe" required><option value="">Choisir</option><option value="M">Masculin</option><option value="F">Féminin</option></select></div>
+    </div>
+    <div class="step"><span>2</span> Filière et Classe</div>
+    <div class="field"><label>Option / Filière *</label>
+      <select id="filiere" required>
+        <option value="">-- Choisis la filière --</option>
+        <option value="base">Enseignement de Base</option>
+        <option value="electronique">Électronique</option>
+        <option value="couture">Coupe et Couture</option>
+        <option value="pedagogie">Pédagogie Générale</option>
+      </select>
+    </div>
+    <div class="field"><label>Classe *</label><select id="classe" required><option value="">Choisis d'abord la filière</option></select></div>
+    <div class="step"><span>3</span> Parents</div>
+    <div class="grid2">
+      <div class="field"><label>Nom parent *</label><input type="text" id="parent" required></div>
+      <div class="field"><label>WhatsApp parent *</label><input type="tel" id="whatsapp" required placeholder="+243 810..."></div>
+    </div>
+    <div class="grid2">
+      <div class="field"><label>Email (optionnel)</label><input type="email" id="email"></div>
+      <div class="field"><label>Adresse *</label><input type="text" id="adresse" required></div>
+    </div>
+    <div class="field"><label>École précédente</label><input type="text" id="ancienne" placeholder="Ex: EP Lemba"></div>
+    <div class="step"><span>4</span> Frais</div>
+    <div class="fees"><h4>💰 Frais</h4><div class="fee-row"><span>Inscription:</span><b id="fee-insc">--</b></div><div class="fee-row"><span>Trimestre:</span><b class="voir-bureau">Voir le bureau</b></div><p>Pour les frais du trimestre, voir le bureau de l'IPL Lemba.</p></div>
+    <div class="field"><label>Mode paiement *</label><div class="radios"><label><input type="radio" name="paiement" value="ecole" required> 🏫 Passer à l'école</label><label><input type="radio" name="paiement" value="momo"> 📱 Mobile Money</label><label><input type="radio" name="paiement" value="tranche"> 💳 En 2 tranches</label></div></div>
+    <div id="ecole-info" class="info-ecole hidden"><h4>📍 Institut Pédagogique de Lemba</h4><p>Lemba, Kinshasa - Lun-Sam 8h-16h - +243 810 000 000</p><a href="https://www.google.com/maps/search/Institut+Pedagogique+de+Lemba+Kinshasa" target="_blank" class="btn-map">🗺️ Itinéraire</a></div>
+    <div class="field check"><label><input type="checkbox" id="engagement" required> Je m'engage à passer à l'école dans les 72h *</label></div>
+    <button type="submit" id="btnSubmit" class="btn-submit">S'inscrire à l'IPL →</button>
+  </form>
+  <div id="successBox" class="success hidden"><div class="ok">✅</div><h3>Inscription enregistrée !</h3><p id="successMsg"></p><div class="mat"><small>Matricule</small><b id="matricule"></b></div><div class="share"><span id="shareUrl"></span><button type="button" onclick="copyLink()">Copier</button></div><a id="waEcole" href="#" target="_blank" class="btn-wa">📲 WhatsApp École</a><a id="waParent" href="#" target="_blank" class="btn-ghost">📲 Reçu parent</a><button type="button" onclick="resetForm()" class="btn-ghost full">Nouvelle inscription</button></div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
